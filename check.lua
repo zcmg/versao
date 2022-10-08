@@ -37,3 +37,5 @@ PerformHttpRequest('https://raw.githubusercontent.com/zcmg/'..GetCurrentResource
 	--------------------------------------------------------------------------^0]]):format(versao, update))
 
 end,'GET')
+
+print(GetCurrentResourceName())
