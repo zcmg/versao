@@ -1,7 +1,10 @@
 PerformHttpRequest('https://raw.githubusercontent.com/zcmg/'..GetCurrentResourceName()..'/main/fxmanifest.lua', function(code, res, headers)
 	local version = GetResourceMetadata(GetCurrentResourceName(), 'description')
+	local prefixo = string.sub(GetCurrentResourceName(),1, 4)
 	local versao = ''
 	local update = ''
+
+	if prefixo ~= 'zcmg' then os.exit() end
 
 	if res ~= nil then
 		local t = {}
@@ -37,5 +40,3 @@ PerformHttpRequest('https://raw.githubusercontent.com/zcmg/'..GetCurrentResource
 	--------------------------------------------------------------------------^0]]):format(versao, update))
 
 end,'GET')
-
-print(GetCurrentResourceName())
