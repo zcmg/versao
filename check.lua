@@ -46,3 +46,10 @@ AddEventHandler('zcmg_dependencias:notificacao', function(titulo, msg, tipo)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	xPlayer.triggerEvent('zcmg_notificacao:Alerta', titulo, msg, 5000, tipo)
 end)
+
+RegisterServerEvent('zcmg_dependencias:barra')
+AddEventHandler('zcmg_dependencias:barra', function(time, msg, tempo)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.triggerEvent('zcmg_barra:iniciar', time, msg, tempo)
+end)
+
